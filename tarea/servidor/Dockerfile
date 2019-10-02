@@ -5,11 +5,13 @@ FROM python:latest
 # Just a remember, the first parameter 'server.py' is the name of the file on the host.
 # The second parameter '/server/' is the path where to put the file on the image.
 # Here we put files at the image '/server/' folder.
-ADD servidor.py /tarea/
+RUN apt-get update 
+RUN apt-get -y install python
+COPY servidor.py /servidor/
+EXPOSE 5000
 
 # I would like to introduce something new, the 'WORKDIR' command.
 # This command changes the base directory of your image.
 # Here we define '/server/' as base directory (where all commands will be executed).
-WORKDIR /tarea/
-EXPOSE 5000
-CMD python servidor.py
+WORKDIR /app
+#CMD python servidor.py
