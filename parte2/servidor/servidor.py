@@ -279,7 +279,7 @@ def chequeo():    #¡¡¡ multicast !!!!
         log.write("\n")
         log.close()            
     return
-
+time.sleep(7)
 threads = []
 t = threading.Thread(target=principal)
 threads.append(t)

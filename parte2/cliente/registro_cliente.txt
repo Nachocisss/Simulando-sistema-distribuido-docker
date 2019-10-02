@@ -1,0 +1,4 @@
+Respuesta desde el servidor: Servidor dice: Bienvenido
+su mensaje se guado en nodo 1
+Respuesta desde el servidor: Servidor dice: Bienvenido
+su mensaje se guado en nodo 2

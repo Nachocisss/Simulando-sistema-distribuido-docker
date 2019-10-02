@@ -7,7 +7,7 @@ import time
  
 # Creando un socket TCP/IP
 sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-
+time.sleep(7)
 # Conecta el socket en el puerto cuando el servidor este escuchando
 server_address = ('127.0.0.1', 5000)
 print ('conectando a ' + str(server_address[0]) + ' puerto '+ str(server_address[1]))
