@@ -1,46 +1,40 @@
 version: "3"
 services:
-
   servidor:
-    build: servidor/
-    command: python ./servidor.py
-    ports:
-      - 5000:5000
-      - 5001:5001
-      - 5002:5002
-      - 5003:5003
-      - 5007:5007
-      
-  cliente:
-    build: cliente/
-    command: python ./cliente.py
+    build: 
+      context: ./servidor
+      dockerfile: Dockerfile
+    volumes:
+      - ./servidor:/app/
+    command: python servidor.py
     network_mode: host
     ports:
+      - 5000-5004:5000-5004
+    depends_on:
+      - nodo1
+  cliente:
+    build: 
+      context: ./cliente
+      dockerfile: Dockerfile
+    volumes:
+      - ./cliente:/app/
+    network_mode: host
+    command: python /cliente/cliente.py
+    ports:
       - 5000:5000
+    volumes:
+      - ./cliente:/app/
     depends_on:
       - servidor
-
   nodo1:
-    build: nodo1/
-    command: python ./nodo1.py
+    build: 
+      context: ./nodo1
+      dockerfile: Dockerfile
+    volumes:
+      - ./nodo1:/app/
     network_mode: host
+    command: python /nodo1/nodo1.py
     ports:
       - 5001:5001
-      - 5007:5007
-
-  nodo2:
-    build: nodo2/
-    command: python ./nodo2.py
-    network_mode: host
-    ports:
-      - 5002:5002
-      - 5007:5007
-
-  nodo3:
-    build: nodo3/
-    command: python ./nodo3.py
-    network_mode: host
-    ports:
-      - 5003:5003
-      - 5007:5007
-
+    volumes:
+      - ./nodo1:/app/

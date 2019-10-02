@@ -9,7 +9,6 @@ import threading
 import time
 
 def principal():
-
     #------------------------- CONECTAR CLIENTE -------------------------------
 
     # Creando el socket TCP/IP
@@ -53,7 +52,7 @@ def principal():
 
             # ------------------- SI NO HAY NINGUNO DISPONIBLE ---------------------
             print("lista nodos disponibles:")
-            print listanodos
+            print (listanodos)
             noHayNodos = True
             for i in range(3):
                 if listanodos[i]:
@@ -75,8 +74,8 @@ def principal():
                     else:
                         azar = random.randint(0, 2)
                     # ------------------------------------- CONECTAR NODO 1 ---------------------------------
-                print "valor de azar:"    
-                print azar
+                print ("valor de azar:")    
+                print (azar)
 
                 if azar == 0:
                     try:
@@ -84,7 +83,6 @@ def principal():
                         server_address = ('', 5001)
                         print ('conectando a nodo 1')
                         socknodo1.connect(server_address)
-                        print "dentro de try"
                         # Enviando datos
                         messagenodo1 = 'Hola soy el servidor '
                         messagenodo1Byte = messagenodo1.encode('utf-8')
@@ -198,17 +196,10 @@ def principal():
         finally:
             log.close()
             connection.close()
-            if azar == 0:
-                socknodo1.close()
-            if azar == 1:
-                socknodo2.close()
-            if azar == 2:
-                socknodo3.close()
     sock.close()
 #-------------------------------------------------------------------
 #-------------------------------- Thread 2 -------------------------
 #-------------------------------------------------------------------
-
 def chequeo():    #¡¡¡ multicast !!!!
     MCAST_GRP = '224.3.29.71'
     MCAST_PORT = 5007
@@ -267,7 +258,7 @@ def chequeo():    #¡¡¡ multicast !!!!
 
                 #----- registro de nodos acitvos -----
         log = open("hearbeat_server","a")
-        # Registro nodo 1 
+        # Registro nodo 1   
         log.write("Nodo 1:")
         if disponible1:
             log.write("Activo        /")

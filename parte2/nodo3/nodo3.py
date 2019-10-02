@@ -78,7 +78,7 @@ def chequeo():
         print(data)
         if(data=="MC"):
             print('Enviando respuesta confirmando mi estado activo.')
-            sock_pr.sendto('2', address)
+            sock_pr.sendto('3', address)
 threads = []
 t = threading.Thread(target=principal)
 threads.append(t)
