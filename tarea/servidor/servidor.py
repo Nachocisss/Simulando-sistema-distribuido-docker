@@ -1,9 +1,6 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
  
-# Programa Servidor
-# www.pythondiario.com
- 
 import socket
 import sys
  
