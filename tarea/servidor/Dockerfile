@@ -1,4 +1,4 @@
-FROM python:latest
+FROM ubuntu:latest
 
 # In order to launch our python code, we must import the 'server.py' and 'index.html' file.
 # We use the keyword 'ADD' to do that.
