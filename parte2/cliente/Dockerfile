@@ -13,4 +13,3 @@ COPY cliente.py /cliente/
 # This command changes the base directory of your image.
 # Here we define '/server/' as base directory (where all commands will be executed).
 WORKDIR /app
-ENV NAME World5

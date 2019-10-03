@@ -10,7 +10,7 @@ import time
 
 def principal():
     #------------------------- CONECTAR CLIENTE -------------------------------
-
+    time.sleep(1) #margen para verificar nodos 
     # Creando el socket TCP/IP
     sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 
@@ -210,12 +210,12 @@ def chequeo():    #¡¡¡ multicast !!!!
 #----- Los nodos deben setearse en "False" -----#
     message_mc = b'MC'
     while True:
-        time.sleep(4.6)
         disponible1 = False
         disponible2 = False
         disponible3 = False
         listanodos = [disponible1,disponible2,disponible3]
         listaaddress = [0,0,0]
+
             
 #----- Se consulta los nodos disponibles -----#
         print('enviando {!r}'.format(message_mc))
@@ -277,9 +277,10 @@ def chequeo():    #¡¡¡ multicast !!!!
         else:
             log.write("No disponible /")
         log.write("\n")
-        log.close()            
+        log.close()
+        time.sleep(4.6)
+            
     return
-time.sleep(7)
 threads = []
 t = threading.Thread(target=principal)
 threads.append(t)
