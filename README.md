@@ -20,3 +20,4 @@ Carpeta **parte2** contiene la 2da parte de la actividad
 **hearbeat**: servidor/hearbeat.txt
 **info almacenada en nodos**: nodoX/data.txt (X = numero de nodo) 
 ```
+**Detener procesos** mediante control + c.
