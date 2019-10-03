@@ -1,2 +1,2 @@
 IP: 127.0.0.1 Hola soy 127.0.0.1
-mensaje de 127.0.0.1 exitosamente guardado en nodo 2
+mensaje de 127.0.0.1 exitosamente guardado en nodo 1

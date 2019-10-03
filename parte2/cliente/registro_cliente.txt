@@ -1,0 +1,2 @@
+Servidor dice: Bienvenido
+su mensaje se guado en nodo 1
